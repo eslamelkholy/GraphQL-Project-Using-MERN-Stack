@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "react-apollo";
 import { getAuthorsQuery } from "../../queries/AuthorQueries";
-import { addBookMutation } from '../../queries/BookQueries';
+import { addBookMutation, getBooksQuery} from '../../queries/BookQueries';
 import { useMutation } from '@apollo/react-hooks';
 import { compose } from 'recompose'
 const AddBook = (props) => {
@@ -26,9 +26,9 @@ const AddBook = (props) => {
             genre: book.genre,
             authorId: book.authorId
         },
-
+        refetchQueries:[{query: getBooksQuery}],
     })
-}
+  }
   return (
     <div>
       <form className="col-3">
