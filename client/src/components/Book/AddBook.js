@@ -32,7 +32,7 @@ const AddBook = (props) => {
   return (
     <div>
       <form className="col-3">
-        <div className="form-group">
+        <div className="form-group field">
           <label for="exampleInputBook Name1">Book Name</label>
           <input
             type="text"
@@ -43,7 +43,7 @@ const AddBook = (props) => {
             name="name"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group field">
           <label for="exampleInputGenre1">Genre</label>
           <input
             type="text"
@@ -53,11 +53,10 @@ const AddBook = (props) => {
             name="genre"
           />
         </div>
-        <div className="form-group">
-          <label for="exampleFormControlSelect1">Authors</label>
+        <div className="form-group field">
+          <label >Authors</label>
           <select
             className="form-control"
-            id="exampleFormControlSelect1"
             onChange={onChange}
             name="authorId"
           >
@@ -65,9 +64,11 @@ const AddBook = (props) => {
             {displayAuthors()}
           </select>
         </div>
-        <button type="submit" className="btn btn-success" onClick={formSubmit}>
-          Add Book
-        </button>
+        <div className=" field">
+          <button type="submit" className="btn btn-success" onClick={formSubmit}>
+            +
+          </button>
+        </div>
       </form>
     </div>
   );
