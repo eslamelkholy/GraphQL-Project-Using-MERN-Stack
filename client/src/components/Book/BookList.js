@@ -11,9 +11,7 @@ const BookList = (props) =>{
         else
             return data.books.map(book =>{
                 return(
-                    <li key={book.id}
-                        onClick = { e => setSelectedBook(book.id)}
-                    >{book.name}</li>
+                    <li key={book.id} onClick = { e => setSelectedBook(book.id)}>{book.name}</li>
                 )
             });
     }
